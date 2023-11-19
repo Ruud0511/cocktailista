@@ -1,58 +1,46 @@
 import React from 'react';
 import './App.css'
-import Product from "./components/Product.jsx";
-import citroenen from './assets/citroenen.jpeg';
-import limoenen from './assets/limoenen.png';
-import ijsblokjes from './assets/ijsblokjes.jpg';
-import { ReactComponent as ShoppingCart } from './assets/winkelmandje.svg';
+import { ReactComponent as User } from './assets/user.svg';
+import { ReactComponent as Favorite } from './assets/heart.svg';
+import { ReactComponent as Logo } from './assets/cocktailista.svg';
+import {Routes, Route, NavLink} from "react-router-dom";
+import Cocktails from "./pages/cocktails/Cocktails.jsx";
+import Home from './pages/home/Home.jsx'
+import Mocktails from "./pages/mocktails/Mocktails.jsx";
+import VerrasMe from "./pages/verrasme/VerrasMe.jsx";
+import Contact from "./pages/contact/Contact.jsx";
+import Favorites from "./pages/favorites/Favorites.jsx";
+import MijnAccount from "./pages/mijnaccount/MijnAccount.jsx";
 
 function App() {
     return (
         <>
-            <div>
+            <section>
                 <nav>
+                    <div>
+                            <NavLink to="/"><Logo className="logo"/></NavLink>
+                    </div>
                     <ul>
-                        <li>
-                            <a href="/">Shop</a>
-                        </li>
-                        <li>
-                            <a href="/">Ons verhaal</a>
-                        </li>
-                        <li>
-                            <a href="/">Blog</a>
-                        </li>
+                            <li><NavLink to="/cocktails">Cocktails</NavLink></li>
+                            <li><NavLink to="/mocktails">Mocktails</NavLink></li>
+                            <li><NavLink to="/verrasme">Verras me!</NavLink></li>
                     </ul>
-                    <ShoppingCart className="shopping-cart-icon"/>
+                    <div>
+                        <ul>
+                            <li><User className="user-icon"/></li>
+                            <li><Favorite className="favorite-icon"/></li>
+                        </ul>
+                    </div>
                 </nav>
                 <header className="header">
-                    <h1>Fruit perfection</h1>
-                    <button type="button" onClick={() => console.log("Jij wil shoppen!")}>Shop nu</button>
                 </header>
-
-                <main>
-                    <Product
-                        image={citroenen}
-                        title="Citroen"
-                        description="Een citroen is voor de meeste mensen te zuur om zo uit de hand te eten.
-                Van citroen kun je het vruchtvlees, het sap en de schil gebruiken.
-                Het sappige, lichtgele zure vruchtvlees versterkt de smaak van ander voedsel."
-                    />
-
-                    <Product
-                        image={limoenen}
-                        title="Limoen"
-                        description="Limoen is familie van de citroen en de sinaasappel en behoort tot de citrusvruchten (Wijnruitfamilie).
-                    Limoenen zijn rond en kleiner dan citroenen. De schil is dun, vrij glad en groen."
-                    />
-
-                    <Product
-                        image={ijsblokjes}
-                        title="IJsblokjes"
-                        description="Een ijsblokje of ijsklontje is bevroren water in de vorm van een klein blokje.
-                    Het wordt gemaakt in een diepvriezer door water in een plastic vorm te laten bevriezen."
-                    />
-                </main>
-            </div>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/cocktails" element={<Cocktails/>}/>
+                    <Route path="/mocktails" element={<Mocktails/>}/>
+                    <Route path="/verrasme" element={<VerrasMe/>}/>
+                </Routes>
+            </section>
         </>
     )
 }

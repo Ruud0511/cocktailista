@@ -26,13 +26,10 @@ body {
 /* --------------- 2.1 Navigation ------------------------- */
 
 nav {
-    /*Normaalgesproken hoef je de navigatie niet absoluut te positioneren.
-    Dit kun je gemakkelijk bereiken met het inner vs. outer container principe.
-    In deze situatie hebben we het zo gedaan om het aantal containers in de HTML te minimaliseren. */
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 750px;
     padding: 48px;
     z-index: 1;
 
@@ -45,9 +42,10 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    max-width: 750px;
     flex-direction: row;
     justify-content: space-between;
-    flex-basis: 250px;
+    flex-basis: 750px;
     flex-grow: 0;
     flex-shrink: 1;
 }
@@ -62,14 +60,27 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.shopping-cart-icon {
-    width: 32px;
-    height: 32px;
-}
-
-.shopping-cart-icon > path {
+.logo {
+    width: 64px;
+    height: 64px;
     fill: white;
 }
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.favorite-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+/*.user-icon > path {*/
+/*    fill: white;*/
+/*}*/
 
 /* --------------- 2.2 Header ------------------- */
 
@@ -89,7 +100,7 @@ header {
 header button {
     background-color: white;
     font-weight: 600;
-    border: none;
+    /*border: none;*/
     padding: 24px 48px;
     font-size: 20px;
     color: #df7c6d;
