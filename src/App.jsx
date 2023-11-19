@@ -40,6 +40,22 @@ function App() {
                     <Route path="/mocktails" element={<Mocktails/>}/>
                     <Route path="/verrasme" element={<VerrasMe/>}/>
                 </Routes>
+            <footer className="footer">
+                <div className="footer-text">
+                    <div>
+                        <h3>Gegevens</h3>
+                        <p>Cocktailista</p>
+                        <p>Utrecht</p>
+                    </div>
+                </div>
+                <div className="footer-text">
+                    <div>
+                        <h3>Contact</h3>
+                        <p><a href="mailto:info@cocktailista.nl">info@cocktailista.nl</a></p>
+                        <p>Tel. 06-12345678</p>
+                    </div>
+                </div>
+            </footer>
             </section>
         </>
     )
